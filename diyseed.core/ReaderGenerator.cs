@@ -100,9 +100,26 @@ namespace Diyseed.Core
             double width = Configuration.READER_LINE_SEPARATOR_WIDTH - Configuration.READER_ENCODING_CHARS_OFFSET;
             double height = parameters.CellSize.Height;
 
+            /* TODO: Sostituire alle 3 righe sotto -------------------------------------------------------
+
+            // Genera l'alfabeto mescolato
+            char[] alphabet = Enumerable.Range('a', 26).Select(c => (char)c).ToArray();
+            Random random = new Random();
+            alphabet = alphabet.OrderBy(c => random.Next()).ToArray(); // Mescola l'alfabeto
+
+            // Salva l'alfabeto mescolato in un file
+            string filePath = Path.Combine(Directory.GetCurrentDirectory(), "random_alphabet.txt");
+            File.WriteAllText(filePath, new string(alphabet));
+
+            int alphabetIndex = 0; // Indice per scorrere l'alfabeto mescolato
+
+            ---------------------------------------------------------------------------------------------*/
+
+            /*delete*/
             char firstRowChar = parameters.SeedEncoding == EncodingType.Alphabet ? 'a' : '0';
             char currentRowChar;
             XRect rect;
+            /*end*/
 
             y = parameters.CardPadding;
 
