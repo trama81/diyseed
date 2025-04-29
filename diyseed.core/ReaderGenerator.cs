@@ -111,6 +111,13 @@ namespace Diyseed.Core
             string filePath = Path.Combine(Directory.GetCurrentDirectory(), "random_alphabet.txt");
             File.WriteAllText(filePath, new string(alphabet));
 
+            // Calcola l'hash a 8 bit dell'alfabeto
+            int hash = alphabet.Aggregate(0, (acc, c) => (acc + c) % 256);
+
+            // Salva l'hash in un file
+            string hashFilePath = Path.Combine(Directory.GetCurrentDirectory(), "random_alphabet_hash.txt");
+            File.WriteAllText(hashFilePath, hash.ToString());
+
             int alphabetIndex = 0; // Indice per scorrere l'alfabeto mescolato
 
             ---------------------------------------------------------------------------------------------*/
